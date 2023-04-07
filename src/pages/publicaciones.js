@@ -6,8 +6,11 @@ import {
   faCircle,
   faChevronLeft,
   faUserTie,
+  faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import imgG from '../images/Grafica.png'
+import Footer from '../components/footer/Footer'
+import axios from 'axios'
 
 function Titulos() {
   return (
@@ -82,14 +85,18 @@ function Noticia() {
         ></div>
         {/* Left Arrow */}
         <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-          <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} size={30} />
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            onClick={prevSlide}
+            className="text-3xl"
+          />
         </div>
         {/* Right Arrow */}
         <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
           <FontAwesomeIcon
             icon={faChevronRight}
             onClick={nextSlide}
-            size={30}
+            className="text-3xl"
           />
         </div>
         <div className="flex top-4 justify-center py-2">
@@ -194,11 +201,24 @@ function Comentarios() {
 }
 
 const Publicaciones = () => {
+  const [inputs, setInputs] = useState([])
+
+  const handleChange = (event) => {
+    const name = event.target.name
+    const value = event.target.value
+    setInputs((values) => ({ ...values, [name]: value }))
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    axios.post('http://localhost/api-maiz', inputs).then(function (response) {
+      console.log(response.data)
+    })
+  }
   return (
     <div>
       <NavBar />
       <div className="bg-[white] flex items-center justify-center h-screen mt-[100px] sm:mt-[10px] ">
-        <div className="grid grid-cols-1 place-items-center gap-4  r w-screen m-4 h-[100%]">
+        <div className="grid grid-cols-1 place-items-center gap-4  r w-screen mt-4 h-[100%]">
           <Titulos />
           <Noticia />
           <div className="bg-[#F7F1E5] sm:w-[85%] w-[100%] m-0">
@@ -217,7 +237,38 @@ const Publicaciones = () => {
             </p>
           </div>
           <Comentarios />
+          <div className="bg-[#E7B10A] w-[100%] sm:w-[85%] p-4 rounded-xl">
+            <p className="text-[#4C4B16] text-2xl font-semibold text-left">
+              <FontAwesomeIcon
+                icon={faComment}
+                className="pr-2 pl-6 text-[white]"
+              />
+              Ingresa tu comentario
+            </p>
+            <form onSubmit={handleSubmit}>
+              <input
+                className="bg-[white] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-4 mt-4"
+                placeholder="Ingresa tu nombre"
+                type="text"
+                name="name"
+                onChange={handleChange}
+              ></input>
+              <textarea
+                id="message"
+                rows="4"
+                type="text"
+                name="coment"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-[white] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                placeholder="Deja un comentario..."
+                onChange={handleChange}
+              ></textarea>
+              <button className="text-center p-4 pl-8 pr-8 bg-[#4C4B16] rounded-lg mt-4 text-[white] font-semibold hover:bg-[#898121]">
+                Enviar
+              </button>
+            </form>
+          </div>
           <div className="text-[white]">..</div>
+          <Footer />
         </div>
       </div>
     </div>
