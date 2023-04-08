@@ -4,6 +4,7 @@ import Home from './pages/home'
 import Publicaciones from './pages/publicaciones'
 import Galeria from './pages/galeria'
 import Info from './pages/info'
+import Recetas from './pages/recetas'
 
 const Content = () => {
   return (
@@ -13,6 +14,7 @@ const Content = () => {
         <Route path="/publicaciones" component={Publicaciones} />
         <Route path="/galeria" component={Galeria} />
         <Route path="/info" component={Info} />
+        <Route path="/Recetas" component={Recetas} />
       </Switch>
     </BrowserRouter>
   )

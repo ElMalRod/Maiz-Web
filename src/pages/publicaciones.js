@@ -1,5 +1,5 @@
 import NavBar from '../components/navbar/NavBar'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChevronRight,
@@ -151,6 +151,17 @@ function Noticia() {
 }
 
 function Comentarios() {
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    getUsers()
+  }, [])
+
+  function getUsers() {
+    axios.get('http://localhost/api-maiz/').then(function (response) {
+      console.log(response.data)
+      setUsers(response.data)
+    })
+  }
   return (
     <div className="grid place-items-center rounded-t-[18px] sm:w-[85%] w-[100%] m-4">
       <div className="bg-[#898121] rounded-t-[18px] w-[100%] ">
@@ -159,42 +170,24 @@ function Comentarios() {
         </p>
       </div>
       <div className="grid grid-cols-1 w-[100%]">
-        <div className="bg-[#F7F1E5]">
-          <div className="w-[100%] font-semibold text-[#18181b] p-2 text-lg">
-            <p>
-              <FontAwesomeIcon icon={faUserTie} className="pr-2 pl-6" />
-              Nombre
-            </p>
-          </div>
-          <div className="w-[100%] bg-[white] border border-[#898121] p-2 text-[#27272a] text-justify">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </p>
-          </div>
-        </div>
-        <div className="bg-[#F7F1E5]">
-          <div className="w-[100%] font-semibold text-[#18181b] p-2 text-lg">
-            <p>
-              <FontAwesomeIcon icon={faUserTie} className="pr-2 pl-6" />
-              Nombre
-            </p>
-          </div>
-          <div className="w-[100%] bg-[white] border border-[#898121] p-2 text-[#27272a] text-justify">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </p>
-          </div>
-        </div>
+        <>
+          {users.map((user, key) => (
+            <div
+              className="font-semibold text-lg border border-[#898121]"
+              key={key}
+            >
+              <div className="bg-[#F7F1E5] p-2 text-[#3f3f46]">
+                <p>
+                  <FontAwesomeIcon icon={faUserTie} className="pr-2 pl-6" />
+                  {user.name}
+                </p>
+              </div>
+              <div className="bg-white  p-2 text-[#27272a] text-justify">
+                <p className="font-normal text-base">{user.coment}</p>
+              </div>
+            </div>
+          ))}
+        </>
       </div>
     </div>
   )
@@ -210,7 +203,7 @@ const Publicaciones = () => {
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('http://localhost/api-maiz', inputs).then(function (response) {
+    axios.post('http://localhost/api-maiz/', inputs).then(function (response) {
       console.log(response.data)
     })
   }
