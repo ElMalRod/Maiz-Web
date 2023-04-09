@@ -33,11 +33,11 @@ function Noticia() {
   const slides = [
     {
       url:
-        'https://images.unsplash.com/photo-1634651423235-0117bc2b37c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+        'https://images.unsplash.com/photo-1567547921486-f280c2f53b5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1567547921486-f280c2f53b5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+        'https://images.unsplash.com/photo-1634651423235-0117bc2b37c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
     },
 
     {

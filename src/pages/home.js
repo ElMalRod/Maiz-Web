@@ -49,40 +49,14 @@ function Linksp() {
         </div>
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">
-            Actualidad del cultivo de maíz
+            <a href="http://localhost:3000/publicaciones">
+              Actualidad del cultivo de maíz
+            </a>
           </div>
           <p class="text-gray-600 text-base">
             La producción de maíz en Guatemala no cubre la demanda nacional,
             viéndose en la necesidad de importar maíz para cubrir las demandas
             internas.
-          </p>
-        </div>
-        <div class="px-6 py-4">
-          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
-            #photography
-          </span>
-          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
-            #travel
-          </span>
-          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
-            #winter
-          </span>
-        </div>
-      </div>
-      <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8 bg-[#F7F1E5] hover:border-4 hover:border-[#E7B10A]">
-        <div className="w-[100%] h-[350px] overflow-hidden">
-          <img
-            class="bg-center bg-cover"
-            src="https://images.unsplash.com/photo-1634651424460-e772b0263eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-            alt="Sunset in the mountains"
-          />
-        </div>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p class="text-gray-600 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
           </p>
         </div>
         <div class="px-6 py-4">
@@ -101,27 +75,60 @@ function Linksp() {
         <div className="w-[100%] h-[350px] overflow-hidden">
           <img
             class="bg-center bg-cover"
+            src="https://images.unsplash.com/photo-1634651424460-e772b0263eb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="Sunset in the mountains"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">
+            <a href="http://localhost:3000/galeria">Galeria</a>
+          </div>
+          <p class="text-gray-600 text-base">
+            Ingresa tus propias fotos y disfruta de la galeria de nuestra
+            página.
+          </p>
+        </div>
+        <div class="px-6 py-4">
+          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
+            #Fotografía
+          </span>
+          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
+            #maíz
+          </span>
+          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
+            #gallery
+          </span>
+          <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
+            #art
+          </span>
+        </div>
+      </div>
+      <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8 bg-[#F7F1E5] hover:border-4 hover:border-[#E7B10A]">
+        <div className="w-[100%] h-[350px] overflow-hidden">
+          <img
+            class="bg-center bg-cover"
             src="https://images.unsplash.com/photo-1596298796586-dab0c6a1e487?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80"
             alt="Sunset in the mountains"
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <div class="font-bold text-xl mb-2">
+            <a href="http://localhost:3000/recetas">Recetas y platillos</a>
+          </div>
           <p class="text-gray-600 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
+            Conoce las recetas y platillos más populares de Guatemala y del
+            mundo. También puedes aportar tus propias recetas con maíz.
           </p>
         </div>
         <div class="px-6 py-4">
           <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
-            #photography
+            #Comida
           </span>
           <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2">
-            #travel
+            #Recetas
           </span>
           <span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
-            #winter
+            #Cocina
           </span>
         </div>
       </div>

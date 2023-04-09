@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSeedling } from '@fortawesome/free-solid-svg-icons'
-//import Publicaciones from '../../pages/publicaciones'
 
 const NavBar = () => {
   return (
@@ -15,20 +13,44 @@ const NavBar = () => {
         </span>
         <span className="font-semibold sm:text-3xl text-sm tracking-tight ">
           {' '}
-          Maíz Web
+          <a href="http://localhost:3000/">Maíz Web</a>
         </span>
       </div>
 
       {/* Botones de información y contacto */}
-      <div>
+      <div className="h-[100%] ">
+        <button className=" h-[100%] text-[#F7F1E5] sm:text-xl text-sm px-2 font-semibold hover:bg-[#898121] hover:drop-shadow-sm">
+          <a
+            href="http://localhost:3000/publicaciones"
+            className=" w-[100%] text-center inline-block"
+          >
+            Publicaciones
+          </a>
+        </button>
+
         <button className="text-[#F7F1E5] sm:text-xl text-sm h-full sm:px-6 px-2 font-semibold hover:bg-[#898121] hover:drop-shadow-sm">
-          <Link to="/publicaciones">Publicaciones</Link>
+          <a
+            href="http://localhost:3000/galeria"
+            className=" w-[100%] text-center inline-block"
+          >
+            Galeria
+          </a>
+        </button>
+        <button className=" h-[100%] text-[#F7F1E5] sm:text-xl text-sm px-2 font-semibold hover:bg-[#898121] hover:drop-shadow-sm">
+          <a
+            href="http://localhost:3000/recetas"
+            className=" w-[100%] text-center inline-block"
+          >
+            Recetas
+          </a>
         </button>
         <button className="text-[#F7F1E5] sm:text-xl text-sm h-full sm:px-6 px-2 font-semibold hover:bg-[#898121] hover:drop-shadow-sm">
-          <Link to="/galeria">Galeria</Link>
-        </button>
-        <button className="text-[#F7F1E5] sm:text-xl text-sm h-full sm:px-6 px-2 font-semibold hover:bg-[#898121] hover:drop-shadow-sm">
-          <Link to="/info">Quienes somos</Link>
+          <a
+            href="http://localhost:3000/info"
+            className=" w-[100%] text-center inline-block"
+          >
+            Quienes somos
+          </a>
         </button>
       </div>
     </nav>
